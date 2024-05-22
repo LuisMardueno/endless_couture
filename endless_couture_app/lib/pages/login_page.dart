@@ -1,27 +1,20 @@
-import 'dart:developer';
 import 'package:endless_couture_app/pages/home_page2.dart';
+import 'package:endless_couture_app/pages/info_page.dart';
 import 'package:endless_couture_app/widgets/my_elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:animate_gradient/animate_gradient.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 
-const supabaseUrl = 'https://uwjzpffujudpscewkslp.supabase.co';
-const supabaseKey = String.fromEnvironment('SUPABASE_KEY');
 
 class LogingPage extends StatelessWidget {
   const LogingPage({super.key});
 
-  Future<void> main() async {
-  await Supabase.initialize(
-    url: 'https://xyzcompany.supabase.co',
-    anonKey: 'public-anon-key',
-  );}
+  Future<void> main() async {}
   
 
   @override
   Widget build(BuildContext context) {
     final double aspectRatio = MediaQuery.of(context).size.width;
-    log(aspectRatio.toString());
+    double screenHeight = MediaQuery.of(context).size.height;
     
     return  Material(
       child:
@@ -95,7 +88,11 @@ class LogingPage extends StatelessWidget {
                   {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage()));
                   },
-                  child: const Text("login", style: TextStyle(color: Colors.white,fontFamily: "Ubuntu", fontSize: 20),))
+                  child: const Text("login", style: TextStyle(color: Colors.white,fontFamily: "Ubuntu", fontSize: 20),)),
+                  SizedBox(height: screenHeight - 285 ),
+                  ElevatedButton.icon(onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const InfoPage()));
+                  }, icon: const Icon(Icons.info_outline), label: const Text('Pruebas'))
                 ]
              ),
           );

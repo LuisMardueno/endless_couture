@@ -39,7 +39,9 @@ dependencies:
   supabase_flutter: ^2.5.3
   carousel_slider: ^4.2.1
   cached_network_image: ^3.3.1
-  csv: ^6.0.0
+  ml_algo: ^16.17.10
+  ml_dataframe: ^1.6.0
+  csv: 5.1.1
 
 dev_dependencies:
   flutter_test:
@@ -66,6 +68,8 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/Datos.csv
+    - assets/DatosModelo.csv
+    - assets/one_hot_modelo.csv
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

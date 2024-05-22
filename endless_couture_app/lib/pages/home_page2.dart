@@ -211,8 +211,8 @@ class _HomePageState extends State<HomePage> {
                         builder: (context, snapshot) {
                           if (snapshot.connectionState == ConnectionState.done) {
                             return SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.2, // Adjust the width as needed
-                              height: MediaQuery.of(context).size.height * 0.4, // Adjust the height as needed
+                              width: MediaQuery.of(context).size.width * 0.2, 
+                              height: MediaQuery.of(context).size.height * 0.4, 
                               child: CachedNetworkImage(
                                 imageUrl: dataImg[index].toString(),
                                 placeholder: (context, url) => const CircularProgressIndicator(),
@@ -237,7 +237,7 @@ class _HomePageState extends State<HomePage> {
                               children: [
                                 TextSpan(text: 'Temporada: ${dataTemporada[index]}\n'),
                                 TextSpan(text: 'Color: ${dataColor[index]}\n'),
-                                TextSpan(text:  'Ventas: ${dataVentas[index]}\n'),
+                                TextSpan(text:  'Ventas: +${dataVentas[index]}\n'),
                                 TextSpan(text: 'Precio: ${dataPrecio[index]}'),
                                 ]
                             ) // Display corresponding text
